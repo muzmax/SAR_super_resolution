@@ -23,8 +23,28 @@ DATASET:
   BATCH_SIZE: 1
 
 TRAIN:
-    
-
+  PATH_TO_SAVE: './train/train_results'
+  PATH_TO_LR: './train/slc_lr'
+  PATH_TO_HR: './train/denoised_hr'
+  PATH_TO_WEIGHTS: './weights' #None if no path
+  EPOCH: 10
+  CHECKPOINT_STEP: 5
+  BATCH_SIZE: 1
+  VALID_RATIO: 0.2
+  SUMMARY: False
+  LOSS :
+    NAME: "huber"
+  OPTIMIZER:
+    NAME: Adam
+    ADAM:
+      WEIGHT_DECAY: 0
+      LR_INITIAL: 0.001
+  SCHEDULER:
+    NAME: "ReduceOnPlateau"
+    ReduceOnPlateau:
+      PATIENCE: 10
+      THRESH: 0.0001
+  
 INFERENCE:
   PATH_TO_SAVE: './data/results'
   PATH_TO_SLC: './data/slc_lr'
@@ -52,5 +72,3 @@ MODEL:
     MLP_RATIO: 2
     UPSAMPLER: "pixelshuffledirect"
     RESI_CONNECTION: "1conv"
-
-
