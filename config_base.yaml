@@ -22,10 +22,13 @@ DATASET:
   NUM_THREADS: 0
   BATCH_SIZE: 1
 
+TRAIN:
+    
+
 INFERENCE:
-  PATH_TO_SAVE: './data/predict/results'
-  PATH_TO_SLC: './data/predict/slc_lr'
-  PATH_TO_DENOISED: './data/predict/denoised_lr'
+  PATH_TO_SAVE: './data/results'
+  PATH_TO_SLC: './data/slc_lr'
+  PATH_TO_DENOISED: './data/denoised_lr'
   PATH_TO_WEIGHTS: './weights'
   BATCH_SIZE: 1
   STRIDE: 32
